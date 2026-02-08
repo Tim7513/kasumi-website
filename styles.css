@@ -273,6 +273,7 @@ body {
     color: var(--dark-green);
     margin-bottom: 2rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .page-content p {
@@ -298,6 +299,9 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem;
     margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .buy-card {
@@ -345,6 +349,99 @@ body {
     background: #1f3810;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(45, 80, 22, 0.4);
+}
+
+/* Product Page Styles */
+.product-subtitle {
+    font-size: 1.5rem;
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.product-intro {
+    margin-bottom: 4rem;
+}
+
+.product-intro p {
+    font-size: 1.4rem;
+    color: var(--dark-green);
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.product-section {
+    margin-bottom: 3.5rem;
+}
+
+.product-section h2 {
+    font-size: 2rem;
+    color: var(--dark-green);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.product-section p {
+    font-size: 1.2rem;
+}
+
+.feature-list, .specs-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.7;
+}
+
+.feature-list li:before {
+    content: '•';
+    color: var(--dark-green);
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+}
+
+.specs-list li {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.specs-list li:before {
+    content: '•';
+    color: var(--dark-green);
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+}
+
+/* About Page Styles */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1.3rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    line-height: 1.9;
+}
+
+.about-content p strong {
+    color: var(--dark-green);
+    font-size: 1.4rem;
 }
 
 /* Responsive Design */
