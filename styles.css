@@ -189,13 +189,11 @@ body {
 }
 
 .can {
-    width: 200px;
+    width: 160px;
     height: 380px;
-    border-radius: 20px;
     position: relative;
     transition: transform 0.3s ease;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
     display: flex;
     flex-direction: column;
 }
@@ -208,78 +206,112 @@ body {
     height: 420px;
 }
 
-/* Top section (cream background) */
+/* Can top (lid with rim) */
 .can-top {
-    flex: 1.1;
-    background: var(--cream);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem 1rem;
+    width: 100%;
+    height: 25px;
+    background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 50%, #b8b8b8 100%);
+    border-radius: 80px 80px 0 0;
     position: relative;
+    box-shadow:
+        inset 0 2px 4px rgba(255, 255, 255, 0.5),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+        0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Bottom section (green background) */
-.can-bottom {
-    flex: 0.9;
-    background: var(--dark-green);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem 1rem;
-    position: relative;
-}
-
-/* Product name styling */
-.product-name {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--dark-green);
-    text-align: center;
-    line-height: 1.3;
-    letter-spacing: 0.3px;
-    margin-bottom: 0.5rem;
-}
-
-/* Japanese text */
-.product-name-jp {
-    font-size: 0.75rem;
-    color: var(--dark-green);
-    font-weight: 400;
-    margin-top: 0.3rem;
-}
-
-/* Star accent */
-.star-accent {
+/* Pull tab detail */
+.can-top::after {
+    content: '';
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    color: var(--dark-green);
-    opacity: 0.4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 8px;
+    background: linear-gradient(135deg, #f0f0f0 0%, #c0c0c0 100%);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Can body */
+.can-body {
+    flex: 1;
+    position: relative;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Cylindrical effect with gradients */
+.can-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    pointer-events: none;
+}
+
+/* Highlight on the left side for 3D effect */
+.can-body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 15%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    pointer-events: none;
+}
+
+/* Can color variants */
+.can-1 .can-body {
+    background: linear-gradient(180deg,
+        var(--light-green) 0%,
+        var(--light-green) 60%,
+        #b5c591 100%
+    );
+}
+
+.can-2 .can-body {
+    background: linear-gradient(180deg,
+        #ffffff 0%,
+        #f5f5f5 60%,
+        #e8e8e8 100%
+    );
+}
+
+.can-3 .can-body {
+    background: linear-gradient(180deg,
+        var(--light-green) 0%,
+        var(--light-green) 60%,
+        #b5c591 100%
+    );
 }
 
 /* Kasumi brand name */
 .brand-name {
     font-style: italic;
-    font-size: 1.8rem;
-    color: var(--cream);
+    font-size: 2rem;
+    color: var(--dark-green);
     font-weight: 300;
-    margin-bottom: 0.5rem;
     letter-spacing: -0.5px;
-}
-
-/* Alcohol percentage */
-.alcohol-label {
-    font-size: 0.65rem;
-    color: var(--cream);
-    font-weight: 500;
-    background: rgba(0, 0, 0, 0.15);
-    padding: 0.25rem 0.6rem;
-    border-radius: 12px;
-    margin-top: 0.5rem;
+    z-index: 2;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
 }
 
 .decorative-shape {
@@ -439,7 +471,7 @@ body {
     }
 
     .can {
-        width: 150px;
+        width: 130px;
         height: 300px;
     }
 
@@ -447,16 +479,12 @@ body {
         height: 330px;
     }
 
-    .product-name {
-        font-size: 0.8rem;
+    .can-top {
+        height: 20px;
     }
 
     .brand-name {
-        font-size: 1.5rem;
-    }
-
-    .star-accent {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -483,7 +511,7 @@ body {
     }
 
     .can {
-        width: 100px;
+        width: 90px;
         height: 200px;
     }
 
@@ -491,24 +519,17 @@ body {
         height: 220px;
     }
 
-    .product-name {
-        font-size: 0.6rem;
+    .can-top {
+        height: 15px;
     }
 
-    .product-name-jp {
-        font-size: 0.5rem;
+    .can-top::after {
+        width: 12px;
+        height: 5px;
     }
 
     .brand-name {
-        font-size: 1.2rem;
-    }
-
-    .star-accent {
         font-size: 1rem;
-    }
-
-    .alcohol-label {
-        font-size: 0.5rem;
     }
 
     .page-content h1 {
