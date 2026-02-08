@@ -46,23 +46,12 @@ body {
 
 .logo {
     display: flex;
-    flex-direction: column;
-    line-height: 1.2;
+    align-items: center;
 }
 
-.logo-text {
-    font-size: 2rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--dark-green);
-    letter-spacing: -1px;
-}
-
-.logo-subtitle {
-    font-size: 0.75rem;
-    color: var(--dark-green);
-    font-weight: 300;
-    margin-top: -5px;
+.logo-image {
+    height: 60px;
+    width: auto;
 }
 
 .nav-menu {
@@ -97,7 +86,7 @@ body {
 }
 
 .buy-btn {
-    background: var(--accent-blue);
+    background: var(--dark-green);
     color: white !important;
     padding: 0.6rem 1.5rem;
     border-radius: 25px;
@@ -105,12 +94,12 @@ body {
 }
 
 .buy-btn:hover {
-    background: #5a5e9a;
+    background: #094d27;
     transform: translateY(-2px);
 }
 
 .buy-btn.active::after {
-    background: var(--accent-blue);
+    background: var(--dark-green);
 }
 
 /* Hero Section */
@@ -188,130 +177,19 @@ body {
     align-items: center;
 }
 
-.can {
-    width: 160px;
-    height: 380px;
-    position: relative;
+.product-image {
+    height: 400px;
+    width: auto;
     transition: transform 0.3s ease;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
-    display: flex;
-    flex-direction: column;
 }
 
-.product-can:hover .can {
+.can-2 .product-image {
+    height: 440px;
+}
+
+.product-can:hover .product-image {
     transform: translateY(-10px);
-}
-
-.can-2 .can {
-    height: 420px;
-}
-
-/* Can top (lid with rim) */
-.can-top {
-    width: 100%;
-    height: 25px;
-    background: linear-gradient(180deg, #e8e8e8 0%, #d0d0d0 50%, #b8b8b8 100%);
-    border-radius: 80px 80px 0 0;
-    position: relative;
-    box-shadow:
-        inset 0 2px 4px rgba(255, 255, 255, 0.5),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2),
-        0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* Pull tab detail */
-.can-top::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 8px;
-    background: linear-gradient(135deg, #f0f0f0 0%, #c0c0c0 100%);
-    border-radius: 4px;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Can body */
-.can-body {
-    flex: 1;
-    position: relative;
-    border-radius: 0 0 15px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* Cylindrical effect with gradients */
-.can-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.15) 0%,
-        rgba(255, 255, 255, 0.2) 20%,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(0, 0, 0, 0.1) 100%
-    );
-    pointer-events: none;
-}
-
-/* Highlight on the left side for 3D effect */
-.can-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 10%;
-    width: 15%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(255, 255, 255, 0.1) 100%
-    );
-    pointer-events: none;
-}
-
-/* Can color variants */
-.can-1 .can-body {
-    background: linear-gradient(180deg,
-        var(--light-green) 0%,
-        var(--light-green) 60%,
-        #b5c591 100%
-    );
-}
-
-.can-2 .can-body {
-    background: linear-gradient(180deg,
-        #ffffff 0%,
-        #f5f5f5 60%,
-        #e8e8e8 100%
-    );
-}
-
-.can-3 .can-body {
-    background: linear-gradient(180deg,
-        var(--light-green) 0%,
-        var(--light-green) 60%,
-        #b5c591 100%
-    );
-}
-
-/* Kasumi brand name */
-.brand-name {
-    font-style: italic;
-    font-size: 2rem;
-    color: var(--dark-green);
-    font-weight: 300;
-    letter-spacing: -0.5px;
-    z-index: 2;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
 }
 
 .decorative-shape {
@@ -470,21 +348,12 @@ body {
         margin-top: 3rem;
     }
 
-    .can {
-        width: 130px;
-        height: 300px;
+    .product-image {
+        height: 320px;
     }
 
-    .can-2 .can {
-        height: 330px;
-    }
-
-    .can-top {
-        height: 20px;
-    }
-
-    .brand-name {
-        font-size: 1.6rem;
+    .can-2 .product-image {
+        height: 350px;
     }
 }
 
@@ -510,26 +379,12 @@ body {
         gap: 1rem;
     }
 
-    .can {
-        width: 90px;
-        height: 200px;
-    }
-
-    .can-2 .can {
+    .product-image {
         height: 220px;
     }
 
-    .can-top {
-        height: 15px;
-    }
-
-    .can-top::after {
-        width: 12px;
-        height: 5px;
-    }
-
-    .brand-name {
-        font-size: 1rem;
+    .can-2 .product-image {
+        height: 240px;
     }
 
     .page-content h1 {
